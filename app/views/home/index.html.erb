@@ -1,0 +1,22 @@
+<div class="container">
+  <%= link_to 'Start a new project', new_project_path, class: 'btn btn-primary float-md-right' %>
+  <h1>
+    tupp.io
+    <small>| get publishing done</small>
+  </h1>
+  <p>What do you like to get published?</p>
+
+
+  <div class="d-flex mt-5">
+    <h4 class="text-dark">My latest projects</h4>
+    <%= link_to 'order', '', class: 'ml-auto mt-auto' %>
+  </div>
+  <div class="mb-4">
+    <div class="card-deck">
+      <%= render partial: 'projects/project', collection: @projects %>
+    </div>
+  </div>
+  <%= link_to 'View all', projects_path %>
+
+
+</div>

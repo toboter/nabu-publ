@@ -1,0 +1,8 @@
+<%= content_tag :li, class: 'list-group-item flex-column align-items-start' do %>
+  <div class="d-flex w-100 justify-content-between">
+    <%= content_tag :h6, responsibility.responsable.try(:name), class: 'mb-1' %>
+    <%= content_tag :small, responsibility.type %>
+  </div>
+  <%= content_tag :small, "accepted #{time_ago_in_words(responsibility.accepted_at)} ago" if responsibility.accepted? %>
+  <%= link_to 'Accept', accept_project_responsibility_path(responsibility.project, responsibility), method: :put if !responsibility.accepted? && responsibility.responsables.include?(current_user) %>
+<% end %>

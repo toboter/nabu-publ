@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-body">
+    <%= content_tag :p, project.type, class: 'card-text text-small text-muted mb-1' %>
+    <%= content_tag :h5, project.current_title, class: 'card-title text-dark' %>
+    <%= content_tag :p, truncate(project.abstract, length: 100), class: 'card-text text-smaller text-secondary' %>
+  </div>
+  <div class="card-footer text-smaller text-muted text-center">
+    <div class="card-actions mb-2">
+      <%= link_to 'View', project.becomes(Project), class: 'card-link' %>
+      <%= link_to 'Edit', edit_project_path(project), class: 'card-link' %>
+    </div>
+    updated <%= time_ago_in_words(project.updated_at) %> ago
+  </div>
+</div>

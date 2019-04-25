@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <%= link_to @project.parent.inspect, @project.parent.becomes(Project) if @project.parent %>
+      <%= content_tag :p, @project.type, class: 'text-muted' %>
+      <%= content_tag :h1, @project.current_title, class: 'text-dark' %>
+      <%= content_tag :p, @project.abstract, class: 'text-dark' %>
+      <div class="mb-4">
+        <% @project.children.each do |child| %>
+          <%= link_to child.inspect, child.becomes(Project) %>
+        <% end %>
+      </div>
+      <%= link_to 'Add a contribution', new_project_project_path(@project) %>
+    </div>
+    <div class="col-md-4 offset-md-1">
+      <div class="list-group mb-2">
+        <%= render partial: 'responsibilities/responsibility', collection: @project.responsibilities %>
+      </div>
+      <%= link_to 'Add another responsibility', new_project_responsibility_path(@project), class: 'btn btn-secondary btn-sm' %>
+    </div>
+  </div>
+
+</div>

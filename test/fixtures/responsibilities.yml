@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  project: one
+  responsable: one
+  responsable_type: Responsable
+  creator: one
+  accepted_at: 2018-12-03 14:12:47
+
+two:
+  type: 
+  project: two
+  responsable: two
+  responsable_type: Responsable
+  creator: two
+  accepted_at: 2018-12-03 14:12:47

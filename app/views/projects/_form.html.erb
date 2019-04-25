@@ -1,0 +1,10 @@
+  <%= simple_form_for @project.becomes(Project) do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :parent_id %>
+    <%= f.input :type, collection: Project.types %>
+    <%= f.input :working_title %>
+    <%= f.input :abstract %>
+    attrs<br>
+    responsibilities<br>
+    <%= f.submit %>
+  <% end %>
